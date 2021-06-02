@@ -1,0 +1,16 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name": "coding-challenge",
+    "dockerComposeFile":  [
+        "../docker-compose.yml"
+    ],
+    "service": "service",
+    "workspaceFolder": "/usr/src/app",
+    "shutdownAction": "none",
+    "overrideCommand": true,
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "ms-python.vscode-pylance"
+    ]
+}

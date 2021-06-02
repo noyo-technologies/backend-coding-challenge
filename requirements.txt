@@ -1,0 +1,12 @@
+black
+Faker
+flake8
+flask
+Flask-SQLAlchemy
+marshmallow
+psycopg2
+pytest
+pytest-mock
+requests
+sqlalchemy
+webargs
