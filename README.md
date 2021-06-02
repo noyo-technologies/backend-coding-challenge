@@ -3,6 +3,7 @@
 - [Noyo Coding Challenge](#noyo-coding-challenge)
   - [Address Segment API](#address-segment-api)
     - [Implementation Options](#implementation-options)
+    - [Submission Options](#submission-options)
     - [Overview](#overview)
     - [The Existing Codebase](#the-existing-codebase)
     - [The Challenge: Address Segment Endpoint](#the-challenge-address-segment-endpoint)
@@ -24,6 +25,16 @@ You have two options for completing this exercise:
 1. Complete it prior to your interview. In the live session, we will review your solution and work through one or more of the [Live Extensions](#live-extensions)
 
 2. Complete it during your interview. If you choose this option, we ask that you still familiarize yourself with the exercise and ensure you can start the server prior to your live session.
+
+### Submission Options
+
+You have two options for completing the exercise, choose the one that you are most comfortable with:
+
+1. Commit your code to a public Github repository and share the link to the code with your recruiter.
+
+2. Zip up your code and email it to your recruiter. 
+
+**Note: Please do not fork this repository or open a pull request with your submission against this repository.**
 
 ### Overview
 
