@@ -1,9 +1,11 @@
 # Noyo Coding Challenge
 
 - [Noyo Coding Challenge](#noyo-coding-challenge)
-  - [Address Segment API](#address-segment-api)
+  - [Logistics](#logistics)
     - [Implementation Options](#implementation-options)
     - [Submission Options](#submission-options)
+    - [Support](#support)
+  - [Address Segment API](#address-segment-api)
     - [Overview](#overview)
     - [The Existing Codebase](#the-existing-codebase)
     - [The Challenge: Address Segment Endpoint](#the-challenge-address-segment-endpoint)
@@ -17,7 +19,7 @@
     - [Formatting your Code](#formatting-your-code)
     - [Starting Over](#starting-over)
 
-## Address Segment API
+## Logistics
 
 ### Implementation Options
 
@@ -35,6 +37,12 @@ You have two options for completing the exercise, choose the one that you are mo
 2. Commit your code to a public Github repository and share the link to the code in an email to coding-challenge@noyo.com
 
 **Note: Please do not fork this repository or open a pull request with your submission against this repository.**
+
+### Support 
+
+If you have any technical issues or questions about the instructions below please email coding-challenge@noyo.com and we will get back to you as soon as possible.
+
+## Address Segment API
 
 ### Overview
 
