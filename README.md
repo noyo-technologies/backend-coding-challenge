@@ -22,17 +22,17 @@
 ### Implementation Options
 
 You have two options for completing this exercise:
-1. Complete it prior to your interview. In the live session, we will review your solution and work through one or more of the [Live Extensions](#live-extensions)
+1. **Complete it prior to your interview:** In the live session, you'll review your solution with the interviewer and work through one or more of the [Live Extensions](#live-extensions). If you choose this option we ask that you spend **no more than 1-2 hours on it**, if you are unable to complete within the time recommendation please find a stopping point and you can work through the remainder during the live interview.
 
-2. Complete it during your interview. If you choose this option, we ask that you still familiarize yourself with the exercise and ensure you can start the server prior to your live session.
+2. **Complete it during your interview:** We ask that you spend **20-30 minutes** familiarizing yourself with the exercise and ensuring you can start the server on your machine prior to the live interview. During the interview you will pair with the interviewer to complete the exercise and one or more of the [Live Extension](#live-extensions).
 
 ### Submission Options
 
 You have two options for completing the exercise, choose the one that you are most comfortable with:
 
-1. Commit your code to a public Github repository and share the link to the code with your recruiter.
-
-2. Zip up your code and email it to your recruiter. 
+1. Zip up your code and email it to coding-challenge@noyo.com 
+  
+2. Commit your code to a public Github repository and share the link to the code in an email to coding-challenge@noyo.com
 
 **Note: Please do not fork this repository or open a pull request with your submission against this repository.**
 
