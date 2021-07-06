@@ -39,7 +39,7 @@ def get_address(args, person_id):
     elif len(person.address_segments) == 0:
         abort(404, description="person does not have an address, please create one")
 
-    address_segment = person.address_segments[-1]
+    address_segment = person.address_segments[0]
     return jsonify(AddressSchema().dump(address_segment))
 
 
