@@ -1,25 +1,20 @@
-import requests
-
+from uuid import uuid4
 from faker import Faker
+from service.server import db
+
+from service.models import Person
 
 fake = Faker()
-
+persons = []
 for _ in range(5):
-    first_name = fake.first_name()
-    last_name = fake.last_name()
-    payload = {
-        "first_name": first_name,
-        "middle_name": fake.first_name(),
-        "last_name": last_name,
-        "email": f"{first_name}.{last_name}@example.com".lower(),
-        "date_of_birth": fake.date(),
-    }
+    persons.append(
+        Person(
+            id=uuid4(),
+            first_name=fake.first_name(),
+            middle_name=fake.first_name(),
+            last_name=fake.last_name(),
+        )
+    )
 
-    response = requests.post("http://localhost:3000/api/persons", json=payload)
-    response.raise_for_status()
-
-    person = response.json()
-
-    print("-" * 100)
-    print(f"Created Person: {person['first_name']} {person['last_name']}")
-    print(person["id"])
+db.session.add_all(persons)
+db.session.commit()
