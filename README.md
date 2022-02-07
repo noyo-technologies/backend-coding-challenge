@@ -89,12 +89,12 @@ Your challenge is to update the [code on this endpoint](/service/api/segments.py
 ### Business Rules
 1. You can only add segments to the end.
   1. Inserting a segment that does not temporally go at the end should result in a 400.
+2. A segment end date of None should be treated as infinitely in the future
+3. A segment start date of None should be treated as infinitely in the past.
+4. Update the end_date of an existing segment to the start_date of the new segment if the start_date of the new segment is before the end_date of the exiting segment.
+5. If the existing segments end_date is before the new segment's start_ date then no update to the exiting segment is required
+6. The endpoint should implement http PUT semantics.
 
-Adding a new segment
-update the end_date of an existing segment to the start_date of the new segment
-if the start_date of the new segment is before the end_data of the exiting segment
-if the end_date of the existing segment is None
-The insertion of a new segment should not update the existing segment's end_date if the existing segments end_date is before the new segment's start_ date.
 
 # What we are evaluating
 
