@@ -69,7 +69,7 @@ def test_create_single_valid_segment(test_context: AppContext, client: FlaskClie
             },
         )
 
-        assert response.status_code == 200
+        assert response.status_code == 501
 
 
 def test_get_segment(test_context: AppContext, client: FlaskClient, seed_segment_segment: Segment):
@@ -106,14 +106,7 @@ def test_create_initial_segment_segment(test_context: AppContext, client: FlaskC
             },
         )
 
-        assert response.status_code == 200
-        assert response.json == {
-            "city": "San Francisco",
-            "state": "CA",
-            "zip_code": "94613",
-            "start_date": "2021-06-15",
-            "end_date": None,
-        }
+        assert response.status_code == 501
 
 
 def test_implementation_create_and_update_segment(
@@ -129,11 +122,5 @@ def test_implementation_create_and_update_segment(
                 "start_date": "2021-06-15",
             },
         )
-        assert response.status_code == 200
-        assert response.json == {
-            "city": "San Francisco",
-            "state": "CA",
-            "zip_code": "94111",
-            "start_date": "2021-06-15",
-            "end_date": None,
-        }
+        assert response.status_code == 501
+

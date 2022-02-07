@@ -2,6 +2,7 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Noyo Coding Challenge!](#noyo-coding-challenge)
+- [TLDR Run Instructions](#tldr-run-instructions)
   - [Problem 1. Implement Feature (~ 2 Hours)](#problem-1-implement-feature--2-hours)
     - [Business Rules](#business-rules)
 - [What we are evaluating](#what-we-are-evaluating)
@@ -34,6 +35,14 @@ Development has halted, tests are failing...
 An engineer has joined your team, show them the ropes...  
 1. Discuss the take-home portion in Part 1
 2. Live code implementation of additional features.
+
+# TLDR Run Instructions
+Step 1 - Run this
+```
+docker compose build
+docker compose up -d
+docker compose exec service pytest .
+```
 
 
 ## Problem 1. Implement Feature (~ 2 Hours)
