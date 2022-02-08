@@ -117,7 +117,9 @@ Whenever you start a new position, you encounter code other people have written.
 
 - Obtuse or complex python language features or skills.
     
-We are a python shop and expect you to have an elementary understanding of python language features (or can learn them quickly), particularly those found in many other modern languages. 
+We are a python shop and expect you to have a basic understanding of python language features (or can learn them quickly), particularly those found in many other modern languages. 
+
+Hint: Brush up on classes, functions, loops, if-else control flow, iterators, dictionaries, lists, tuples, datetime.date
 
 *This challenge should not require in-depth python knowledge or a deep understanding of any third-party Library. To that end, here are is a quick [Cheat sheet](#cheat-sheet) designed to get you over hurdles that are not particularly part of this evaluation*
 
