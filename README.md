@@ -2,7 +2,7 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Noyo Coding Challenge!](#noyo-coding-challenge)
-- [TLDR Run Instructions](#tldr-run-instructions)
+    - [TLDR; Run Instructions](#tldr-run-instructions)
   - [Problem 1. Implement Feature (~ 2 Hours)](#problem-1-implement-feature--2-hours)
     - [Business Rules](#business-rules)
 - [What we are evaluating](#what-we-are-evaluating)
@@ -24,7 +24,12 @@
 
 # Noyo Coding Challenge!
 
-Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance." This offering gives a company's employees unique benefits when they are on the road. It considers various aspects of their travel and has some very complex plan eligibility rules. For this challenge, there are two parts.
+Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road. It considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
+
+This codes was deployed to production as is, but is incomplete, the original engineer was on a tight timeline, and did his best; it is possible that there are bugs in the code in addition to incomplete or incorrect tests. 
+
+**Note**  
+For this challenge there are no intentionally included bugs that you have to seek out or find. The incomplete tests however, are intentional and we encourage you to add more. If you find something that you think is a bug, lets talk about it during your onsite!
 
 
 **Part 1 (Take home - Completed before the interview) ~ 2 Hours**  
@@ -36,13 +41,14 @@ An engineer has joined your team, show them the ropes...
 1. Discuss the take-home portion in Part 1
 2. Live code implementation of additional features.
 
-# TLDR Run Instructions
+### TLDR; Run Instructions
 Step 1 - Run this
 ```
 docker compose build
 docker compose up -d
 docker compose exec service pytest .
 ```
+Step 2 Do problem 1
 
 
 ## Problem 1. Implement Feature (~ 2 Hours)
@@ -88,12 +94,12 @@ Your challenge is to update the [code on this endpoint](/service/api/segments.py
 
 ### Business Rules
 1. You can only add segments to the end.
-  1. Inserting a segment that does not temporally go at the end should result in a 400.
-2. A segment end date of None should be treated as infinitely in the future
-3. A segment start date of None should be treated as infinitely in the past.
-4. Update the end_date of an existing segment to the start_date of the new segment if the start_date of the new segment is before the end_date of the exiting segment.
-5. If the existing segments end_date is before the new segment's start_ date then no update to the exiting segment is required
-6. The endpoint should implement http PUT semantics.
+  1. Inserting a segment whose start date is before ANY existing start date should result in a 422.
+2. A segments end date of None should be treated as indefinitely in the future.
+3. Update the end_date of an existing segment to the start_date of the new segment.
+   1. If the existing segments end_date is before the new segment's start_date then no update to the existing segment is required.
+4. The endpoint should implement http PUT semantics if inserting duplicates.
+5. If a person does not exist return 404
 
 
 # What we are evaluating
@@ -155,20 +161,6 @@ statement = text(
 res: list = db.engine.execute(statement).all()
 print(res[0]._asdict())
 
-
-#### MAKING REQUEST TO THE API ####
-# POST Request on console
-curl --location --request POST 'http://localhost:3000/api/persons' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "first_name": "Toby",
-    "middle_name": "A",
-    "last_name": "McGuire"
-}'
-
-# GET request via console
-curl --location --request GET 'http://localhost:3000/api/persons'
-
 ##### POSTGRES ####
 
 # PSQL through docker (so that you do not have to download postgres to you machine)
@@ -176,9 +168,6 @@ docker run -it --rm --network coding_challenge postgres psql --host=db --port=54
 
 # list tables
 \dt
-
-# see all the plans
-select * from plans;
 ```
 
 # Submission Options
