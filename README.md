@@ -188,7 +188,7 @@ If you have any issues or questions about the instructions below, please email *
 
 ## Live Extensions
 
-We will ask you to implement one or more extensions to the code during your live coding interview. It would help if you did not implement these extensions before the interview. You are welcome to look at them, and encouraged to do so if you'd like. However, it would be best not to spend additional time implementing them beforehand.
+We will ask you to implement one or more extensions to the code during your live coding interview. You are welcome to look at them, and encouraged to do so. However, you need not spend additional time implementing them beforehand.
 - [Extension One: Get Address by Date](/docs/extension_one.md)
 - [Extension Two: Merge Segments](/docs/extension_two.md)
 
