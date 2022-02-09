@@ -1,6 +1,7 @@
 # Extension One: Get Address by Date
 
-You may have noticed that the `GET /api/persons/:id/segment` endpoint only returns the 1st segment. This is probably not ideal behavior. We may want to go back in time (or forward) to see what the segment was or will be. The ability to query the segment by date should be implemented as follows:
+A client has requested the ability to find a segment by its date. You may have noticed that the `GET /api/persons/:id/segment` endpoint only returns whatever the first segment the database returns.
+Implement the ability to query the segment by date.
 
 `GET /api/persons/:id/segment?date=YYYY-MM-DD`
 
