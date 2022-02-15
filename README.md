@@ -94,11 +94,11 @@ Your challenge is to update the [code on this endpoint](/service/api/segments.py
 
 ### Business Rules
 1. You can only add segments to the end.
-  1. That is, adding a segment whose start date is before ANY existing start date should result in a 422.
+    1. That is, adding a segment whose start date is before ANY existing start date should result in a 422.
 2. A segments end date of None should be treated as indefinitely in the future.
 3. A new segment that we are adding can have an end date.
 4. Update the end_date of an existing segment to the start_date of the new segment.
-   1. If the existing segments end_date is before the new segment's start_date then no update to the existing segment is required.
+    1. If the existing segments end_date is before the new segment's start_date then no update to the existing segment is required.
 5. The endpoint should implement http PUT semantics if inserting duplicates.
 6. If a person does not exist return 404
 
