@@ -75,7 +75,7 @@ The previous API does nothing but should create a single `Segment` record for th
 
 ![diagram of a single address segment starting at 2021-01-01 and extending indefinitely](/docs/address_one_segment.png)
 
-Making another API call that updates the person's address to `Houston, TX 77897` starting on `2021-06-15`. Should add this new segment to the person's existing segment list.
+Making another API call that updates the person's address to `San Francisco, CA 94911` starting on `2021-06-15`. Should add this new segment to the person's existing segment list.
 
 ```bash
 curl -X PUT 
@@ -83,9 +83,9 @@ curl -X PUT
   -H "Content-Type: application/json" \
   -d '{
     "start_date": "2021-06-15",
-    "city": "Houston",
-    "state": "TX",
-    "zip_code": "77897"
+    "city": "San Francisco",
+    "state": "CA",
+    "zip_code": "94911"
   }'
 ```
 ![diagram of an address segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment extending indefinitely](/docs/address_two_segment.png)
