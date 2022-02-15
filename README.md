@@ -61,7 +61,7 @@ After you've created at least one `Person`, plug their `id` into the following `
 
 ```bash
 curl -X PUT 
-  http://localhost:3000/api/persons/<person_id>/segments \
+  http://localhost:3000/api/persons/<person_id>/segment \
   -H "Content-Type: application/json" \
   -d '{
     "start_date": "2021-01-01",
@@ -79,7 +79,7 @@ Making another API call that updates the person's address to `San Francisco, CA 
 
 ```bash
 curl -X PUT 
-  http://localhost:3000/api/persons/<person_id>/segments \
+  http://localhost:3000/api/persons/<person_id>/segment \
   -H "Content-Type: application/json" \
   -d '{
     "start_date": "2021-06-15",
