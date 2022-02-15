@@ -79,7 +79,7 @@ Making another API call that updates the person's address to `Houston, TX 77897`
 
 ```bash
 curl -X PUT 
-  http://localhost:3000/api/persons/<person_id>/address \
+  http://localhost:3000/api/persons/<person_id>/segments \
   -H "Content-Type: application/json" \
   -d '{
     "start_date": "2021-06-15",
