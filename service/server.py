@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 logging.basicConfig(level=logging.DEBUG)
+logging.getLogger('faker').setLevel(logging.ERROR)
 
 
 # Configure db access for the Flask application using Flask-SQLAlchemy

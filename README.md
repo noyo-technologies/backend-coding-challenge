@@ -1,8 +1,8 @@
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [Noyo Coding Challenge!](#noyo-coding-challenge)
-    - [TLDR; Run Instructions](#tldr-run-instructions)
+  - [TLDR;](#tldr)
+- [Noyo Coding Challenge! (Introduction)](#noyo-coding-challenge-introduction)
   - [Problem 1. Implement Feature (~ 2 Hours)](#problem-1-implement-feature--2-hours)
     - [Business Rules](#business-rules)
 - [What we are evaluating](#what-we-are-evaluating)
@@ -22,34 +22,40 @@
     - [Starting Over](#starting-over)
 - [Thanks!](#thanks)
 
-# Noyo Coding Challenge!
+## TLDR;
+1. You need docker, install it
+2. Run this... and 12 test pass, no warnings
+      ```sh
+      docker compose build # build some stuff
+      docker compose up -d && sleep 5 # start the server and wait
+      docker-compose exec service python seed.py # seed the db 
+      docker compose exec service pytest . # run some tests
+      ```
+3. Do [Take Home Problem 1](#problem-1-implement-feature--2-hours)
+4. If you need to start over
+   ```sh
+   docker-compose down --remove-orphans --volumes # nuke all the things
+   ```
+5. Look at the [Live Extensions](#live-extensions), if you want, but dont do them.
+
+# Noyo Coding Challenge! (Introduction)
 
 Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road. It considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
 
 This code was deployed to production as is, but is incomplete, the original engineer was on a tight timeline, and did his best; it is possible that there are bugs in the code in addition to incomplete or incorrect tests. 
 
 **Note**  
-For this challenge there are no intentionally included bugs that you have to seek out or find. The incomplete tests however, are intentional and we encourage you to add more. If you find something that you think is a bug, lets talk about it during your onsite!
+For this challenge there are **no intentionally** included bugs that you have to seek out or find. The incomplete tests however, are intentional and we encourage you to add more. If you find something that you think is a bug, lets talk about it during your onsite!
 
 
 **Part 1 (Take home - Completed before the interview) ~ 2 Hours**  
-Development has halted, tests are failing...  
+Development has halted and product is incomplete!  
 1. Complete development as outlined in the challenge. 
 
 **Part 2 (Onsite - Pair programming session) ~ 90 Minutes**  
-An engineer has joined your team, show them the ropes...  
+An engineer has joined your team, show them the ropes!  
 1. Discuss the take-home portion in Part 1
 2. Live code implementation of additional features.
-
-### TLDR; Run Instructions
-Step 1 - Run this
-```
-docker compose build
-docker compose up -d
-docker compose exec service pytest .
-```
-Step 2 Do problem 1
-
 
 ## Problem 1. Implement Feature (~ 2 Hours)
 
