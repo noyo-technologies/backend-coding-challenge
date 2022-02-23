@@ -104,15 +104,9 @@ Your challenge is to update the [code on this endpoint](/service/api/segments.py
 2. You should treat a segment's end date of None as indefinitely in the future.
 3. A new segment that can have a non-None end date.
 4. Update the end_date of an existing segment to the start_date of the new segment.
-<<<<<<< Updated upstream
-    1. If the existing segments end_date is before the new segment's start_date then no update to the existing segment is required... Meaning, you can't have overlapping segments, but there can be gaps between segments.
-5. The endpoint should implement http PUT semantics if inserting duplicates.
-6. If a person does not exist return 404
-=======
     1. If the existing segment end_date is before the new segment's start_date, no update to the current segment is required.
 5. The endpoint should implement HTTP PUT semantics if inserting duplicates.
 6. If a person does not exist, return 404
->>>>>>> Stashed changes
 
 
 # What we are evaluating
