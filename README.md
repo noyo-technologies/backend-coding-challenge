@@ -66,7 +66,7 @@ To begin, you will need to [start the server](#running-the-app) and create some 
 After you've created at least one `Person`, plug their `id` into the following `curl` command (or construct an API call using the tool of your choice).
 
 ```bash
-curl -X PUT 
+curl -X PUT \
   http://localhost:3000/api/persons/<person_id>/segment \
   -H "Content-Type: application/json" \
   -d '{
@@ -77,26 +77,42 @@ curl -X PUT
 }'
 ```
 
-The previous API does nothing but should create a single `Segment` record for the `Person` with a `start_date` of `2021-01-01` and an `end_date` of `null`. In our data model, this means that the person's location was `San Francisco, CA 94613` starting on `2021-01-01` and will remain that indefinitely. The following diagram is a visual representation that:
+The previous API call will produce a 501 not implemented. However its should create a single `Segment` record for the `Person` with a `start_date` of `2021-01-01` and an `end_date` of `null`. In our data model, this means that the person's location was `San Francisco, CA 94613` starting on `2021-01-01` and will remain that indefinitely. The following diagram is a visual representation that:
 
-![diagram of a single address segment starting at 2021-01-01 and extending indefinitely](/docs/address_one_segment.png)
+![diagram of a single location segment starting at 2021-01-01 and extending indefinitely](/docs/figure_1.png)
 
-Making another API call that updates the person's address to `San Francisco, CA 94911` starting on `2021-06-15`. Should add this new segment to the person's existing segment list.
+Making another API call that updates the person's location to `San Francisco, CA 94911` starting on `2021-04-15` and ending one `2021-08-15`. Should add this new segment to the person's existing segment list.
 
 ```bash
-curl -X PUT 
-  http://localhost:3000/api/persons/<person_id>/segment \
+curl -X PUT \
+  http://localhost:3000/api/persons/8abbc8e0-7039-4988-8a20-e6c1e1b3bb2f/segment \
   -H "Content-Type: application/json" \
   -d '{
-    "start_date": "2021-06-15",
+    "start_date": "2021-04-15",
+    "end_date": "2021-08-15",
     "city": "San Francisco",
     "state": "CA",
     "zip_code": "94911"
   }'
 ```
-![diagram of an address segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment extending indefinitely](/docs/address_two_segment.png)
+![diagram of a location segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment](/docs/figure_2.png)
 
-Your challenge is to update the [code on this endpoint](/service/api/segments.py#L51) to handle the creation of address segments. 
+Making a third API call that updates the person's location to `Houston, TX 12345` starting on `2021-09-15`. Should add this new segment to the person's existing segment list.
+
+```bash
+curl -X PUT \
+  http://localhost:3000/api/persons/8abbc8e0-7039-4988-8a20-e6c1e1b3bb2f/segment \
+  -H "Content-Type: application/json" \
+  -d '{
+    "start_date": "2021-09-15",    
+    "city": "Houston",
+    "state": "TX",
+    "zip_code": "12345"
+  }'
+```
+![diagram of a location segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment](/docs/figure_3.png)
+
+Your challenge is to update the [code on this endpoint](/service/api/segments.py#L51) to handle the creation of location segments. 
 
 ### Business Rules
 1. You can only add segments to the end.
@@ -131,53 +147,7 @@ Hint: Brush up on classes, functions, loops, if-else control flow, iterators, di
 *This challenge should not require in-depth python knowledge or a deep understanding of any third-party Library. To that end, here are is a quick [Cheat sheet](#cheat-sheet) designed to get you over hurdles that are not particularly part of this evaluation*
 
 # Cheat Sheet
-
-```python
-
-#### DEBUGGING WITH PRINT STATEMENTS ####
-# print to console with flask app
-app.logger.info("some string")
-
-#### FLASK SQL ALCHEMY ####
-
-# Get all persons
-persons:list[Person] = Person.query.all()
-
-# Pagination
-persons:list[Person] = Person.query.limit(10).offset(10).all()
-
-# Get person by id
-person: Person = Person.query.get(id)
-
-# Get Person by first name
-persons:list[Person] = Person.query.filter_by(first_name='John').all()
-
-# Sql Alchemy or_
-from sqlalchemy import or_
-persons: list[Person] = Person.query.filter(
-    or_(Person.first_name == "Marcus", Person.first_name == "Keith")
-).all()
-
-# Run a raw query
-from sqlalchemy.sql import text
-from service.server import db
-
-statement = text(
-    """
-    select id, first_name, middle_name, last_name from persons where first_name = 'Marcus';
-    """
-)
-res: list = db.engine.execute(statement).all()
-print(res[0]._asdict())
-
-##### POSTGRES ####
-
-# PSQL through docker (so that you do not have to download postgres to you machine)
-docker run -it --rm --network coding_challenge postgres psql --host=db --port=5432 --username=noyo  --dbname=coding_challenge
-
-# list tables
-\dt
-```
+[Cheat sheet](/docs/cheat_sheet.md)
 
 # Submission Options
 
@@ -196,7 +166,7 @@ If you have any issues or questions about the instructions below, please email *
 ## Live Extensions
 
 We will ask you to implement one or more extensions to the code during your live coding interview. You are welcome to look at them, and encouraged to do so. However, you need not spend additional time implementing them beforehand.
-- [Extension One: Get Address by Date](/docs/extension_one.md)
+- [Extension One: Get Location by Date](/docs/extension_one.md)
 - [Extension Two: Merge Segments](/docs/extension_two.md)
 
 ## Instructions For Running

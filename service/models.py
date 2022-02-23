@@ -12,6 +12,8 @@ class Person(db.Model):
     middle_name = db.Column(db.String(128), nullable=True)
     last_name = db.Column(db.String(128), nullable=False)
 
+    # sql alchemy will populate this attribute as a list
+    # of all segments that have Segment.person_id == Person.id
     segments = db.relationship("Segment")
 
 

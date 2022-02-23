@@ -6,13 +6,13 @@ from webargs.flaskparser import use_args
 
 from marshmallow import Schema, fields
 
-from service.server import app, db
-from service.models import Segment
+from service.server import app
 from service.models import Person
 
 ###### Query Schemas ######
 class GetSegmentQueryArgsSchema(Schema):
     date = fields.Date(required=False, missing=datetime.utcnow().date())
+
 
 ###### Validation and Response Schemas ######
 class SegmentSchema(Schema):
@@ -39,10 +39,16 @@ def get_segment(args: dict, person_id: UUID):
 
     # query date comes in the the args and default to "today"
     query_date = args["date"]
-    
+
     # Just get the the first segment that comes back
     segment = person.segments[0]
     return jsonify(SegmentSchema().dump(segment))
+
+
+@app.route("/api/persons/<uuid:person_id>/merge", methods=["PUT"])
+@use_args(SegmentSchema())
+def merge_segments(payload: dict, person_id: UUID):
+    return "Not Implemented", 501
 
 
 @app.route("/api/persons/<uuid:person_id>/segment", methods=["PUT"])
