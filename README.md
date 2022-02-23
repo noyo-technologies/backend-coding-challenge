@@ -40,12 +40,12 @@
 
 # Noyo Coding Challenge! (Introduction)
 
-Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road. It considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
+Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road, and it considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
 
-This code was deployed to production as is, but is incomplete, the original engineer was on a tight timeline, and did his best; it is possible that there are bugs in the code in addition to incomplete or incorrect tests. 
+This code was deployed to production as is but is incomplete. The original engineer was on a tight timeline and did his best; there may be bugs in the code in addition to insufficient or incorrect tests.  
 
 **Note**  
-For this challenge there are **no intentionally** included bugs that you have to seek out or find. The incomplete tests however, are intentional and we encourage you to add more. If you find something that you think is a bug, lets talk about it during your onsite!
+There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional, and we encourage you to add more. If you see something that you think is a bug, let's talk about it during your onsite!
 
 
 **Part 1 (Take home - Completed before the interview) ~ 2 Hours**  
@@ -100,13 +100,19 @@ Your challenge is to update the [code on this endpoint](/service/api/segments.py
 
 ### Business Rules
 1. You can only add segments to the end.
-    1. That is, adding a segment whose start date is before ANY existing start date should result in a 422.
-2. A segments end date of None should be treated as indefinitely in the future.
-3. A new segment that we are adding can have an end date.
+    1. That is, adding a segment whose start date is before any current start date should result in a 422.
+2. You should treat a segment's end date of None as indefinitely in the future.
+3. A new segment that can have a non-None end date.
 4. Update the end_date of an existing segment to the start_date of the new segment.
+<<<<<<< Updated upstream
     1. If the existing segments end_date is before the new segment's start_date then no update to the existing segment is required... Meaning, you can't have overlapping segments, but there can be gaps between segments.
 5. The endpoint should implement http PUT semantics if inserting duplicates.
 6. If a person does not exist return 404
+=======
+    1. If the existing segment end_date is before the new segment's start_date, no update to the current segment is required.
+5. The endpoint should implement HTTP PUT semantics if inserting duplicates.
+6. If a person does not exist, return 404
+>>>>>>> Stashed changes
 
 
 # What we are evaluating
@@ -201,7 +207,7 @@ We will ask you to implement one or more extensions to the code during your live
 
 ## Instructions For Running
 
-Here at Noyo we rely on [Docker Compose](https://docs.docker.com/compose/) to ensure the portability of our applications. We've provided a `docker-compose.yml` that installs all the appropriate dependencies and creates a database to which the application can connect.
+Here at Noyo we rely on [Docker Compose](https://docs.docker.com/compose/) to ensure the portability of our applications. We've provided a `docker-compose.yml` that installs all the appropriate dependencies and creates a database the application can connect.
 
 
 ### Building the App
@@ -283,7 +289,7 @@ If you would like to step into and debug code, and are familiar with visual stud
 
 ![Open Remote Container](/docs/remote.png)  
 
-Click that button and it will bring up a menu that you can "Reopen in container". Clicking that will run vs code attached to the docker container with a the virtual python environment setup for you. From there you will be able to setup a nice unit test environment.
+Click that button, and it will bring up a menu that you can "Reopen in container". Clicking will run vs-code attached to the docker container with a virtual python environment setup for you. From there, you will be able to set up a friendly unit test environment.
 
 ![Screenshot](/docs/tests.png)  
 
@@ -301,4 +307,4 @@ Then go back to [Running the App](#running-the-app) and start over.
 
 # Thanks!
 
-We make every effort to demonstrate that we see your time as valuable. We will make every attempt throughout the interview process not to waste it. Nonetheless, we know you're making a big-time commitment. We're sincerely appreciative of both your time and your interest in working with the team at Noyo.
+We make every effort to demonstrate that we see your time as valuable, and we will make every attempt throughout the interview process not to waste it. Nonetheless, we know you're making a big-time commitment. We're sincerely appreciative of both your time and your interest in working with the team at Noyo.
