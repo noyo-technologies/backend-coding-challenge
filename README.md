@@ -112,7 +112,7 @@ curl -X PUT \
 ```
 ![Figure 3](/docs/figure_3.png)
 
-Your challenge is to update the [code on this endpoint](/service/api/segments.py#L51) to handle the creation of location segments. 
+Your challenge is to update the in segment.py to `create_segmen` hanlding the creation of location segments. 
 
 ### Business Rules
 1. You can only add segments to the end.
