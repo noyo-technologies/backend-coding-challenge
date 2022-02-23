@@ -79,7 +79,7 @@ curl -X PUT \
 
 The previous API call will produce a 501 not implemented. However its should create a single `Segment` record for the `Person` with a `start_date` of `2021-01-01` and an `end_date` of `null`. In our data model, this means that the person's location was `San Francisco, CA 94613` starting on `2021-01-01` and will remain that indefinitely. The following diagram is a visual representation that:
 
-![diagram of a single location segment starting at 2021-01-01 and extending indefinitely](/docs/figure_1.png)
+![Figure 1](/docs/figure_1.png)
 
 Making another API call that updates the person's location to `San Francisco, CA 94911` starting on `2021-04-15` and ending one `2021-08-15`. Should add this new segment to the person's existing segment list.
 
@@ -95,7 +95,7 @@ curl -X PUT \
     "zip_code": "94911"
   }'
 ```
-![diagram of a location segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment](/docs/figure_2.png)
+![Figure 2](/docs/figure_2.png)
 
 Making a third API call that updates the person's location to `Houston, TX 12345` starting on `2021-09-15`. Should add this new segment to the person's existing segment list.
 
@@ -110,7 +110,7 @@ curl -X PUT \
     "zip_code": "12345"
   }'
 ```
-![diagram of a location segment starting at 2021-01-01 and ending on 2021-06-15, followed by a second segment](/docs/figure_3.png)
+![Figure 3](/docs/figure_3.png)
 
 Your challenge is to update the [code on this endpoint](/service/api/segments.py#L51) to handle the creation of location segments. 
 
