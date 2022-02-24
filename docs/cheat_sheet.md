@@ -23,7 +23,7 @@ curl http://localhost:3000/api/persons
 ```
 
 # Marshmallow
-marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes.
+Marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes.
 
 ```python
 class ArtistSchema(Schema):
@@ -32,9 +32,9 @@ class ArtistSchema(Schema):
 @app.route("/api/some_route", methods=["POST"])
 @use_args(ArtistSchema())
 def some_route(payload: dict):
-
-
-    pass
+    # marshmallow will validate the incomming POST payload, 
+    # ensuring that there is a valid string value.
+    return payload["name"]
 ```
 
 # Flask SQL Alchemy
