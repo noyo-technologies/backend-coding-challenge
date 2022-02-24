@@ -22,6 +22,20 @@ curl -X PUT \
 curl http://localhost:3000/api/persons
 ```
 
+# Marshmallow
+marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes.
+
+```python
+class ArtistSchema(Schema):
+    name = fields.Str(required=True)
+
+@app.route("/api/some_route", methods=["POST"])
+@use_args(ArtistSchema())
+def some_route(payload: dict):
+
+
+    pass
+```
 
 # Flask SQL Alchemy
 We use sqlalchemy at noyo but do not expect that to have worked with it, as such here is the simple crash course on it. Please note that no sqlalchemy code is required to solve any of the problems or extenstions. This is here solely for your reference.

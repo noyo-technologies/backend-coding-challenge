@@ -23,7 +23,7 @@
 - [Thanks!](#thanks)
 
 ## TLDR;
-1. You need docker, install it
+1. You'll need docker, install it.
 2. Run the following... and 12 test will pass, with no warnings or errors.
       ```sh
       docker compose build # build some stuff
@@ -40,19 +40,19 @@
 
 # Noyo Coding Challenge! (Introduction)
 
-Within this repository is a python application that implements v1.0 of a fictitious product specification. The story goes that Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road, and it considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
+Within this repository is a python application that implements a fictitious product specification. Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road, it considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
 
 This code was deployed to production as is but is incomplete. The original engineer was on a tight timeline and did his best; there may be bugs in the code in addition to insufficient or incorrect tests.  
 
 **Note**  
-There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional, and we encourage you to add more. If you see something that you think is a bug, let's talk about it during your onsite!
+There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional. If you see something that you think is a bug, let's talk about it during your onsite!
 
 
 **Part 1 (Take home - Completed before the interview) ~ 2 Hours**  
-Development has halted and product is incomplete!  
+Development has halted and the product is incomplete!  
 1. Complete development as outlined in the challenge. 
 
-**Part 2 (Onsite - Pair programming session) ~ 90 Minutes**  
+**Part 2 (Onsite - Pair programming session) ~ 75 Minutes**  
 An engineer has joined your team, show them the ropes!  
 1. Discuss the take-home portion in Part 1
 2. Live code implementation of additional features.
@@ -112,16 +112,32 @@ curl -X PUT \
 ```
 ![Figure 3](/docs/figure_3.png)
 
-Your challenge is to update the in segment.py to `create_segmen` hanlding the creation of location segments. 
+A final API call that updates the person's location to `Durham, NC 27517` starting on `2021-07-15`. Should fail.
+
+```bash
+curl -X PUT \
+  http://localhost:3000/api/persons/8abbc8e0-7039-4988-8a20-e6c1e1b3bb2f/segment \
+  -H "Content-Type: application/json" \
+  -d '{
+    "start_date": "2021-07-15",    
+    "city": "Durham",
+    "state": "NC",
+    "zip_code": "27517"
+  }'
+```
+![Figure 4](/docs/figure_4.png)
+
+
+Your challenge is to update the in segment.py to `create_segment` handling the creation of location segments. 
 
 ### Business Rules
 1. You can only add segments to the end.
     1. That is, adding a segment whose start date is before any current start date should result in a 422.
 2. You should treat a segment's end date of None as indefinitely in the future.
-3. A new segment that can have a non-None end date.
+3. A new segment can have a non-None end date.
 4. Update the end_date of an existing segment to the start_date of the new segment.
     1. If the existing segment end_date is before the new segment's start_date, no update to the current segment is required.
-5. The endpoint should implement HTTP PUT semantics if inserting duplicates.
+5. The endpoint should implement HTTP PUT semantics when inserting exact duplicates.
 6. If a person does not exist, return 404
 
 
