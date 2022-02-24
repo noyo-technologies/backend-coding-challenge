@@ -160,7 +160,7 @@ We are a python shop and expect you to have a basic understanding of python lang
 
 Hint: Brush up on classes, functions, loops, if-else control flow, iterators, dictionaries, lists, tuples, datetime.date
 
-*This challenge should not require in-depth python knowledge or a deep understanding of any third-party Library. To that end, here are is a quick [Cheat sheet](#cheat-sheet) designed to get you over hurdles that are not particularly part of this evaluation*
+*This challenge should not require in-depth python knowledge or a deep understanding of any third-party Library. To that end, here are is a quick [Cheat sheet](/docs/cheat_sheet.md) designed to get you over hurdles that are not particularly part of this evaluation*
 
 # Cheat Sheet
 [Cheat sheet](/docs/cheat_sheet.md)
