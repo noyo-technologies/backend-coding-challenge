@@ -265,11 +265,12 @@ docker compose exec service black .
 
 
 ### Debugging
-If you would like to step into and debug code, and are familiar with visual studio code, we have included a [devcontainer.json](/.devcontainer/devcontainer.json). On the the bottom left of vs code there is a button with two angle brackets "><"  
+If you would like to step into and debug code, and are familiar with visual studio code, we have included a [devcontainer.json](/.devcontainer/devcontainer.json).  
+On the the bottom left of vs-code there is a button with two angle brackets "><"  
 
 ![Open Remote Container](/docs/remote.png)  
 
-Click that button, and it will bring up a menu that you can "Reopen in container". Clicking will run vs-code attached to the docker container with a virtual python environment setup for you. From there, you will be able to set up a friendly unit test environment.
+Click that button, and it will bring up a menu that you can "Reopen in container". Clicking will run vs-code attached to the docker container with a virtual python environment setup for you. From there, you will be able to use a friendly unit test environment (the beaker on the left side). Note that you may have to "reload" vs-code after you are attached to the container to finish loading the Pylance language server. Normal there will be a pop-up on the lower right asking you to reload, if that is not the case, you an open the comman palette clicke "View -> Command Palette", then type "> Reload Window"
 
 ![Screenshot](/docs/tests.png)  
 
