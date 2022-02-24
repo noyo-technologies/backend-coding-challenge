@@ -24,7 +24,7 @@
 
 ## TLDR;
 1. You need docker, install it
-2. Run this... and 12 test pass, no warnings
+2. Run the following... and 12 test will pass, with no warnings or errors.
       ```sh
       docker compose build # build some stuff
       docker compose up -d && sleep 5 # start the server and wait
