@@ -77,7 +77,7 @@ curl -X PUT \
 }'
 ```
 
-The previous API call will produce a 501 not implemented. However its should create a single `Segment` record for the `Person` with a `start_date` of `2021-01-01` and an `end_date` of `null`. In our data model, this means that the person's location was `San Francisco, CA 94613` starting on `2021-01-01` and will remain that indefinitely. The following diagram is a visual representation that:
+_The previous API call will produce a 501 not implemented._ However its should create a single `Segment` record for the `Person` with a `start_date` of `2021-01-01` and an `end_date` of `null`. In our data model, this means that the person's location was `San Francisco, CA 94613` starting on `2021-01-01` and will remain that indefinitely. The following diagram is a visual representation that:
 
 ![Figure 1](/docs/figure_1.png)
 
