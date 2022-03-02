@@ -42,7 +42,7 @@
 
 Within this repository is a python application that implements a fictitious product specification. Noyo is partnering with innovative insurance companies offering a new type of coverage called "traveling salesperson insurance.". This offering gives a company's employees unique benefits when they are on the road, it considers various aspects of their travel and has some very complex plan eligibility rules. When a salesman is working out of a home office, there could be gaps in their coverage timeline. 
 
-This code was deployed to production as is but is incomplete. The original engineer was on a tight timeline and did his best; there may be bugs in the code in addition to insufficient or incorrect tests.  
+This code was deployed to production as is but is incomplete. The original engineer was on a tight timeline and did their best; there may be bugs in the code in addition to insufficient or incorrect tests.  
 
 **Note**  
 There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional. If you see something that you think is a bug, let's talk about it during your onsite!
