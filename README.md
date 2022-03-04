@@ -34,7 +34,7 @@
 3. Do [Take Home Problem 1](#problem-1-implement-feature--2-hours)
 4. If you need to start over
    ```sh
-   docker-compose down --remove-orphans --volumes # nuke all the things
+   docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
 5. Look at the [Live Extensions](#live-extensions), if you want, but dont do them.
 
