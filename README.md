@@ -31,7 +31,7 @@
       docker-compose exec service python seed.py # Seed the database
       docker compose exec service pytest . # Run the test suite
       ```
-3. Do [Take Home Problem 1](#problem-1-implement-feature--2-hours)
+3. Complete [Take Home Problem 1](#problem-1-implement-feature--1-2-hours)
 4. If you need to start over
    ```sh
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
