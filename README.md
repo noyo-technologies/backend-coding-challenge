@@ -23,7 +23,7 @@
 - [Thanks!](#thanks)
 
 ## TLDR;
-1. You'll need docker, install it.
+1. We use Docker for our local development here at Noyo, you can find the instructions for installing it on your local system [here](https://docs.docker.com/get-docker/).
 2. Run the following... and 12 test will pass, with no warnings or errors.
       ```sh
       docker compose build # build some stuff
