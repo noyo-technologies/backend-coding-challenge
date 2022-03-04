@@ -36,7 +36,7 @@
    ```sh
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
-5. Look at the [Live Extensions](#live-extensions), if you want, but dont do them.
+5. Look at the [Live Extensions](#live-extensions), if you want, but don't do them.
 
 # Noyo Coding Challenge! (Introduction)
 
