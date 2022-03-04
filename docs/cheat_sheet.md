@@ -38,7 +38,7 @@ def some_route(payload: dict):
 ```
 
 # Flask SQLAlchemy
-We use sqlalchemy at noyo but do not expect that to have worked with it, as such here is the simple crash course on it. Please note that no sqlalchemy code is required to solve any of the problems or extenstions. This is here solely for your reference.
+We use [SQLAlchemy](https://www.sqlalchemy.org/) at Noyo, but do not expect you to have worked with it, as such here is the simple crash course on it. Please note that no advanced SQLAlchemy code is required to solve any of the problems or extensions. For example, in lieu of using the `.filter_by` syntax feel free to load models into memory and to filter using pure Python. 
 
 
 ### Add a person
