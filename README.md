@@ -48,7 +48,7 @@ This code was deployed to production as is but is incomplete. The original engin
 There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional. If you see something that you think is a bug, let's talk about it during your onsite!
 
 
-**Part 1 (Take home - Completed before the interview) ~ 2 Hours**  
+**Part 1 (Take home - Completed before the interview) 1-2 Hours**  
 Development has halted and the product is incomplete!  
 1. Complete development as outlined in the challenge. 
 
