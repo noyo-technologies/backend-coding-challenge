@@ -37,7 +37,7 @@ def some_route(payload: dict):
     return payload["name"]
 ```
 
-# Flask SQL Alchemy
+# Flask SQLAlchemy
 We use sqlalchemy at noyo but do not expect that to have worked with it, as such here is the simple crash course on it. Please note that no sqlalchemy code is required to solve any of the problems or extenstions. This is here solely for your reference.
 
 
