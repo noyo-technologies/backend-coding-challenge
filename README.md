@@ -26,10 +26,10 @@
 1. We use Docker for our local development here at Noyo, you can find the instructions for installing it on your local system [here](https://docs.docker.com/get-docker/).
 2. Run the following... and 12 test will pass, with no warnings or errors.
       ```sh
-      docker compose build # build some stuff
-      docker compose up -d && sleep 5 # start the server and wait
-      docker-compose exec service python seed.py # seed the db 
-      docker compose exec service pytest . # run some tests
+      docker compose build # build the local containers
+      docker compose up -d && sleep 5 # start up the Docker containers and wait
+      docker-compose exec service python seed.py # Seed the database
+      docker compose exec service pytest . # Run the test suite
       ```
 3. Do [Take Home Problem 1](#problem-1-implement-feature--2-hours)
 4. If you need to start over
