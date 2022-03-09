@@ -24,7 +24,7 @@
 
 ## TLDR;
 1. We use Docker for our local development here at Noyo, you can find the instructions for installing it on your local system [here](https://docs.docker.com/get-docker/).
-2. Run the following... and 12 test will pass, with no warnings or errors.
+2. Run the following... and 12 tests will pass, with no warnings or errors.
       ```sh
       docker compose build # build the local containers
       docker compose up -d && sleep 5 # start up the Docker containers and wait
