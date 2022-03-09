@@ -169,15 +169,15 @@ Hint: Brush up on classes, functions, loops, if-else control flow, iterators, di
 
 You have two options for completing the exercise; choose the one that you are most comfortable with:
 
-1. Zip up your code and email it to coding-challenge@noyo.com
+1. Zip up your code and email it to coding-challenge at noyo dot com
 
-2. Commit your code to a Github repository and share the link to the code in an email to coding-challenge@noyo.com
+2. Commit your code to a Github repository and share the link to the code in an email to coding-challenge at noyo dot com
 
 - **Note: Please do not fork this repository or open a pull request with your submission against this repository.**
 
 ## Support
 
-If you have any issues or questions about the instructions below, please email **coding-challenge@noyo.com**, and we will get back to you as soon as possible.
+If you have any issues or questions about the instructions below, please email **coding-challenge at noyo dot com**, and we will get back to you as soon as possible.
 
 ## Live Extensions
 
