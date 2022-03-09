@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 logging.basicConfig(level=logging.DEBUG)
+logging.getLogger('faker').setLevel(logging.ERROR)
 
 
 # Configure db access for the Flask application using Flask-SQLAlchemy
@@ -13,21 +14,29 @@ def initialize_db_client(app: Flask) -> SQLAlchemy:
 
 def initialize_routes(app: Flask) -> None:
     import service.api.persons  # noqa 401
-    import service.api.addresses  # noqa 401
+    import service.api.segments  # noqa 401
 
 
 def initialize_error_handlers(app: Flask) -> None:
-
-    # Return validation errors as JSON
+    # # Return validation errors as JSON
     @app.errorhandler(422)
     @app.errorhandler(400)
     def handle_422_error(err):
-        messages = err.data.get("messages", ["Invalid request."])
-        return jsonify({"errors": messages}), err.code
+        data = getattr(err, "data", None)
+        if data:
+            messages = data.get("messages", ["Invalid request."])
+            return jsonify({"errors": messages}), err.code
+
+        description = getattr(err, "description", None)
+        if description:
+            return jsonify({"errors": [description]}), err.code
+
+        return jsonify({"errors": [f"unknown error {err.code}"]}), err.code
 
     # Return 404 errors as JSON
     @app.errorhandler(404)
     def handle_404_error(err):
+
         return (
             jsonify(
                 {"error": getattr(err, "description", "resource does not exit")}
