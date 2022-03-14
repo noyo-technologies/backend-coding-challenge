@@ -8,7 +8,7 @@
 - [What we are evaluating](#what-we-are-evaluating)
 - [What we are not evaluating](#what-we-are-not-evaluating)
 - [Cheat Sheet](#cheat-sheet)
-- [Submission Options](#submission-options)
+  - [Submission](#submission)
   - [Support](#support)
   - [Live Extensions](#live-extensions)
   - [Instructions For Running](#instructions-for-running)
@@ -37,6 +37,10 @@
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
 5. Look at the [Live Extensions](#live-extensions), if you want, but don't do them.
+6. Zip up your code and email it to **coding-challenge at noyo dot com**
+    ```sh
+    zip -r FirstName_LastName.zip  backend-coding-challenge -x '*.git*' -x '*__pycache__*' -x '*.pytest_cache*' # exclude, .git, __pycache__, and  .pytest_cache
+    ```
 
 # Noyo Coding Challenge! (Introduction)
 
@@ -165,13 +169,12 @@ Hint: Brush up on classes, functions, loops, if-else control flow, iterators, di
 # Cheat Sheet
 [Cheat sheet](/docs/cheat_sheet.md)
 
-# Submission Options
+## Submission
 
-You have two options for completing the exercise; choose the one that you are most comfortable with:
-
-1. Zip up your code and email it to coding-challenge at noyo dot com
-
-2. Commit your code to a Github repository and share the link to the code in an email to coding-challenge at noyo dot com
+1. Zip up your code, excluding, .git, \_\_pycache__, and  .pytest_cache, and email it to **coding-challenge at noyo dot com**
+```sh
+zip -r FirstName_LastName.zip  backend-coding-challenge -x '*.git*' -x '*__pycache__*' -x '*.pytest_cache*'
+```
 
 - **Note: Please do not fork this repository or open a pull request with your submission against this repository.**
 
