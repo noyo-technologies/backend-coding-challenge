@@ -2,11 +2,11 @@ black
 Faker
 flake8
 flask
-Flask-SQLAlchemy
+Flask-SQLAlchemy==2.5.1
 marshmallow
 psycopg2
 pytest
 pytest-mock
 requests
-sqlalchemy
+sqlalchemy==1.4.46
 webargs
