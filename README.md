@@ -36,8 +36,7 @@
    ```sh
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
-5. Look at the [Live Extensions](#live-extensions), if you want, but don't do them.
-6. Zip up your code and email it to **coding-challenge at noyo dot com**
+5. Zip up your code and email it to **coding-challenge at noyo dot com**
     ```sh
     zip -r FirstName_LastName.zip  backend-coding-challenge -x '*.git*' -x '*__pycache__*' -x '*.pytest_cache*' # exclude, .git, __pycache__, and  .pytest_cache
     ```
@@ -184,9 +183,7 @@ If you have any issues or questions about the instructions below, please email *
 
 ## Live Extensions
 
-We will ask you to implement one or more extensions to the code during your live coding interview. You are welcome to look at them, and encouraged to do so. However, you need not spend additional time implementing them beforehand.
-- [Extension One: Get Location by Date](/docs/extension_one.md)
-- [Extension Two: Merge Segments](/docs/extension_two.md)
+We will ask you to implement one or more extensions to the code during your live coding interview. There is nothing further you need to prepare beyond the initial challenge here.
 
 ## Instructions For Running
 
