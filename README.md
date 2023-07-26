@@ -27,16 +27,17 @@
 2. Run the following... and 12 tests will pass, with no warnings or errors.
       ```sh
       docker compose build # build the local containers
-      docker compose up -d && sleep 5 # start up the Docker containers and wait
-      docker-compose exec service python seed.py # Seed the database
+      docker compose up -d && sleep 10 # start up the Docker containers and wait
+      docker-compose exec service python seed.py # Seed the database (you can run this as many times as you want)
       docker compose exec service pytest . # Run the test suite
       ```
-3. Complete [Take Home Problem 1](#problem-1-implement-feature--1-2-hours)
-4. If you need to start over
+3. curl http://localhost:3000/api/persons # you should see 5 employees returned
+4. Complete [Take Home Problem 1](#problem-1-implement-feature--1-2-hours)
+7. If you need to start over
    ```sh
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
-5. Zip up your code and email it to **coding-challenge at noyo dot com**
+6. Zip up your code and email it to **coding-challenge at noyo dot com**
     ```sh
     zip -r FirstName_LastName.zip  backend-coding-challenge -x '*.git*' -x '*__pycache__*' -x '*.pytest_cache*' # exclude, .git, __pycache__, and  .pytest_cache
     ```
@@ -48,7 +49,7 @@ Within this repository is a python application that implements a fictitious prod
 This code was deployed to production as is but is incomplete. The original engineer was on a tight timeline and did their best; there may be bugs in the code in addition to insufficient or incorrect tests.  
 
 **Note**  
-There are **no intentionally** included bugs that you have to seek out or find for this challenge. However, the incomplete tests are intentional. If you see something that you think is a bug, let's talk about it during your onsite!
+There are **no intentionally included bugs**  that you have to seek out or find for this challenge. However, the incomplete tests are intentional. If you see something that you think is a bug, let's talk about it during your onsite!
 
 
 **Part 1 (Take home - Completed before the interview) 1-2 Hours**  
