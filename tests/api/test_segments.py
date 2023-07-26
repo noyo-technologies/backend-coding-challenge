@@ -11,15 +11,16 @@ from flask.ctx import AppContext
 
 
 @pytest.fixture
-def seed_person():
-    """seed and return a person"""
-    person = Person(first_name="John", last_name="Doe")
+def seed_person( test_context: AppContext):
+    with  test_context:
+        """seed and return a person"""
+        person = Person(first_name="John", last_name="Doe")
 
-    db.session.add(person)
-    db.session.commit()
-    db.session.refresh(person)
+        db.session.add(person)
+        db.session.commit()
+        db.session.refresh(person)
 
-    yield person
+        yield person
 
 
 @pytest.fixture
