@@ -81,7 +81,7 @@ persons = Person.query.filter_by(first_name='John').all()
 # Postgres 
 
 ### PSQL through docker 
-So that you do not have to download postgres to you machine, you can run the following command to get a psql command prompt into the database
+So that you do not have to download postgres to your machine, you can run the following command to get a psql command prompt into the database
 ```sh
 docker run -it --rm --network coding_challenge postgres psql --host=db --port=5432 --username=noyo  --dbname=coding_challenge
 ```
