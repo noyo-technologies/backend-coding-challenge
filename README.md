@@ -37,7 +37,7 @@
    ```sh
    docker-compose down --remove-orphans --volumes # stop all containers from running and remove volumes
    ```
-6. Zip up your code and email it to **coding-challenge at noyo dot com**
+6. Zip up your code and email it to **coding-challenge at noyo dot com** no later than 24 hrs before your interview 😄
     ```sh
     zip -r FirstName_LastName.zip  backend-coding-challenge -x '*.git*' -x '*__pycache__*' -x '*.pytest_cache*' # exclude, .git, __pycache__, and  .pytest_cache
     ```
