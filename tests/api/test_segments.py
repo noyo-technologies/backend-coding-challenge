@@ -11,8 +11,8 @@ from flask.ctx import AppContext
 
 
 @pytest.fixture
-def seed_person( test_context: AppContext):
-    with  test_context:
+def seed_person(test_context: AppContext):
+    with test_context:
         """seed and return a person"""
         person = Person(first_name="John", last_name="Doe")
 

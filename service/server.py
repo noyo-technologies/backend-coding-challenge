@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 logging.basicConfig(level=logging.DEBUG)
-logging.getLogger('faker').setLevel(logging.ERROR)
+logging.getLogger("faker").setLevel(logging.ERROR)
 
 
 # Configure db access for the Flask application using Flask-SQLAlchemy
@@ -36,7 +36,6 @@ def initialize_error_handlers(app: Flask) -> None:
     # Return 404 errors as JSON
     @app.errorhandler(404)
     def handle_404_error(err):
-
         return (
             jsonify(
                 {"error": getattr(err, "description", "resource does not exit")}

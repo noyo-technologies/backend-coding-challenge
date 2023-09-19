@@ -9,12 +9,13 @@ from marshmallow import Schema, fields
 from service.server import app
 from service.models import Person
 
-###### Query Schemas ######
+
+# Query Schemas
 class GetSegmentQueryArgsSchema(Schema):
     date = fields.Date(required=False, missing=datetime.utcnow().date())
 
 
-###### Validation and Response Schemas ######
+# Validation and Response Schemas
 class SegmentSchema(Schema):
     class Meta:
         ordered = True

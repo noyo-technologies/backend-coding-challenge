@@ -44,15 +44,13 @@ def test_get_person_not_found(test_context, client):
 
 
 def test_get_person_success(test_context, client):
-
-
     with test_context:
         person = Person(first_name="John", last_name="Doe")
 
         db.session.add(person)
         db.session.commit()
         db.session.refresh(person)
-        
+
         get_response = client.get(f"/api/persons/{person.id}")
 
         assert get_response.status_code == 200
@@ -72,7 +70,7 @@ def test_get_persons_success(test_context, client):
         db.session.add(person_one)
         db.session.add(person_two)
         db.session.commit()
-        
+
         get_response = client.get("/api/persons")
 
         assert get_response.status_code == 200
@@ -86,7 +84,7 @@ def test_patch_person_with_validation_error(test_context, client):
         db.session.add(person)
         db.session.commit()
         db.session.refresh(person)
-        
+
         patch_response = client.patch(
             f"/api/persons/{person.id}", json={"first_name": None, "last_name": None}
         )
@@ -110,7 +108,6 @@ def test_patch_person_person_does_not_exist(test_context, client):
         db.session.commit()
         db.session.refresh(person)
 
-
         patch_response = client.patch(
             f"/api/persons/{uuid.uuid4()}", json={"first_name": "Jane"}
         )
@@ -126,7 +123,7 @@ def test_patch_person_success(test_context, client):
         db.session.add(person)
         db.session.commit()
         db.session.refresh(person)
-        
+
         patch_response = client.patch(
             f"/api/persons/{person.id}",
             json={"last_name": "Smith"},
