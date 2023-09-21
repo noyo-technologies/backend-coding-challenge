@@ -1,8 +1,6 @@
 import pytest
 import uuid
 
-from datetime import date, timedelta
-
 from service.models import Segment, Person
 
 from service.server import db
@@ -215,7 +213,7 @@ def test_add_two_segments_updating_end_date(
 ):
     with test_context:
         uri = f"/api/persons/{seed_person.id}/segments"
-        segment_1 = client.put(
+        client.put(
             uri,
             json={
                 "start_date": "2021-01-01",
@@ -224,7 +222,7 @@ def test_add_two_segments_updating_end_date(
                 "zip_code": "94613",
             },
         )
-        segment_2 = client.put(
+        client.put(
             uri,
             json={
                 "start_date": "2021-01-02",
@@ -273,7 +271,7 @@ def test_update_segment_datetime_mistmatch(
 ):
     uri = f"/api/persons/{seed_person.id}/segments"
     with test_context:
-        original_segment = client.put(
+        client.put(
             uri,
             json={
                 "start_date": "2021-01-01",

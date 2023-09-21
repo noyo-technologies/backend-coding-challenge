@@ -1,7 +1,7 @@
 from datetime import datetime
 from uuid import UUID
 
-from flask import abort, jsonify, request
+from flask import abort, jsonify
 from webargs.flaskparser import use_args
 
 from marshmallow import Schema, fields
@@ -79,7 +79,8 @@ def get_segments(args: dict, person_id: UUID):
         abort(404, description="person does not have a segment, please create one")
 
     # query date comes in the the args and default to "today"
-    query_date = args["date"]
+    # TODO: is this part of the requirements? commented out for now
+    # query_date = args["date"]
 
     limit = args["limit"]
 
@@ -151,7 +152,6 @@ def upsert_segment(payload: dict, person_id: UUID):
     else:
         new_segment = create_segment(new_segment_data)
         return jsonify(SegmentResponseSchema().dump(new_segment))
-
 
     # this should never trigger
     app.logger.warn(f"Failed to upsert segment for person: {person_id}")
