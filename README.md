@@ -252,7 +252,7 @@ The schema for the database is created for you when you start up the container b
 |Password|noyo|
 
 ```shell
-docker run -it --rm --network coding_challenge postgres psql --host=db --port=5432 --username=noyo  --dbname=coding_challenge
+docker run -it --rm --network backend-coding-challenge_default postgres psql --host=db --port=5432 --username=noyo  --dbname=coding_challenge
 ```
 ### Formatting your Code
 
