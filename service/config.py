@@ -19,7 +19,9 @@ class Configuration(object):
         username=os.environ.get("DATABASE_USER"),
         password=os.environ.get("DATABASE_PASSWORD"),
         host=os.environ.get("DATABASE_HOST"),
-        port=os.environ.get("DATABASE_PORT"),
+        port=int(os.environ["DATABASE_PORT"])
+        if os.environ.get("DATABASE_PORT") is not None
+        else None,
         database=os.environ.get("DATABASE_DB"),
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
