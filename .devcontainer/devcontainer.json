@@ -8,9 +8,20 @@
     "workspaceFolder": "/usr/src/app",
     "shutdownAction": "none",
     "overrideCommand": true,
-    "extensions": [
-        "ms-python.python",
-        "ms-azuretools.vscode-docker",
-        "ms-python.vscode-pylance"
-    ]
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "eamodio.gitlens",
+          "ms-azuretools.vscode-docker",
+          "ms-python.black-formatter",
+          "ms-python.flake8",
+          "ms-python.isort",
+          "ms-python.mypy-type-checker",
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "ms-vscode-remote.vscode-remote-extensionpack",
+          "smulyono.reveal"
+        ]
+      }
+    }
 }
