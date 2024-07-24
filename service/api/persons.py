@@ -1,13 +1,13 @@
 from uuid import UUID
+
 from flask import abort, jsonify
-from webargs.flaskparser import use_args
 from marshmallow import Schema, fields
+from webargs.flaskparser import use_args
 
-from service.server import app, db
 from service.models import Person
+from service.server import app, db
 
 
-###### Validation Schemas ######
 class UpdateOrFindPersonSchema(Schema):
     first_name = fields.Str(max=128)
     middle_name = fields.Str(max=128)
@@ -20,7 +20,6 @@ class CreatePersonSchema(Schema):
     last_name = fields.Str(required=True, max=128)
 
 
-###### Response Schemas ######
 class PersonResonseSchema(Schema):
     class Meta:
         ordered = True

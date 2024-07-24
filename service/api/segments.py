@@ -2,19 +2,17 @@ from datetime import datetime
 from uuid import UUID
 
 from flask import abort, jsonify
+from marshmallow import Schema, fields
 from webargs.flaskparser import use_args
 
-from marshmallow import Schema, fields
-
-from service.server import app
 from service.models import Person
+from service.server import app
 
-###### Query Schemas ######
+
 class GetSegmentQueryArgsSchema(Schema):
     date = fields.Date(required=False, missing=datetime.utcnow().date())
 
 
-###### Validation and Response Schemas ######
 class SegmentSchema(Schema):
     class Meta:
         ordered = True
@@ -38,7 +36,7 @@ def get_segment(args: dict, person_id: UUID):
         abort(404, description="person does not have an segment, please create one")
 
     # query date comes in the the args and default to "today"
-    query_date = args["date"]
+    query_date = args["date"]  # noqa: F841
 
     # Just get the the first segment that comes back
     segment = person.segments[0]

@@ -1,18 +1,16 @@
-import pytest
 import uuid
 
-from datetime import date, timedelta
-
-from service.models import Segment, Person
-
-from service.server import db
-from flask.testing import FlaskClient
+import pytest
 from flask.ctx import AppContext
+from flask.testing import FlaskClient
+
+from service.models import Person, Segment
+from service.server import db
 
 
 @pytest.fixture
-def seed_person( test_context: AppContext):
-    with  test_context:
+def seed_person(test_context: AppContext):
+    with test_context:
         """seed and return a person"""
         person = Person(first_name="John", last_name="Doe")
 
