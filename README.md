@@ -213,6 +213,8 @@ docker compose up -d
 
 This will start up the [Python Flask](https://flask.palletsprojects.com/en/1.1.x/) server on `localhost:3000` and a PostgreSQL instance on `localhost:5432`.
 
+If you have any local app servers running on port 3000 or a local PostgreSQL instance running on port 5432, please shutdown those down for this exercise.
+
 Flask starts up in debug mode, meaning whenever you save a file, it will restart the server with your changes.
 
 ### Running the Tests
